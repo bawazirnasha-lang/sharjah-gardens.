@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حدائق الشارقة | Sharjah Gardens</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --green: #17613e;
+    --green-dark: #103b29;
+    --green-light: #eaf5ec;
+    --header-green: #d5edda;
+    --accent: #72a982;
+    --cream: #f8faf7;
+    --text: #26352d;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+}
+
+/* HEADER */
+header {
+    background: var(--header-green);
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 18px rgba(0,0,0,.08);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    cursor: pointer;
+    flex-direction: row;
+}
+
+/* LOGO - TRANSPARENT BACKGROUND */
+.brand img {
+    width: 66px;
+    height: 66px;
+    object-fit: contain;
+    flex-shrink: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: .3s;
+}
+
+.brand:hover img {
+    transform: translateY(-2px);
+    box-shadow: none;
+}
+
+.brand-text {
+    border-right: 2px solid rgba(23,97,62,.25);
+    padding-right: 12px;
+}
+
+.brand-text h2 {
+    color: var(--green);
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.brand-text p {
+    font-size: 11px;
+    color: #53685a;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #234a34;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #397b50;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: var(--green);
+    cursor: pointer;
+}
+
+/* PAGES */
+.page {
+    display: none;
+    animation: appear .5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* HERO */
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    padding: 80px 9%;
+    position: relative;
+    background:
+        linear-gradient(90deg, rgba(9,35,27,.86), rgba(9,35,27,.35)),
+        url('https://commons.wikimedia.org/wiki/Special:FilePath/Al_Majaz_Waterfront,_Sharjah_UAE.jpg')
+        center / cover no-repeat;
+}
+
+.hero-content {
+    color: white;
+    max-width: 720px;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: 30px;
+    margin-bottom: 25px;
+    font-size: 13px;
+    background: rgba(255,255,255,.12);
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 62px);
+    line-height: 1.5;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #a9dfb5;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 2.1;
+    color: #f0f0f0;
+    max-width: 650px;
+    margin-bottom: 32px;
+}
+
+.main-btn {
+    display: inline-block;
+    padding: 13px 30px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.main-btn:hover {
+    background: #287c4c;
+    transform: translateY(-3px);
+}
+
+.outline-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    margin-right: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    background: transparent;
+}
+
+.outline-btn:hover {
+    background: white;
+    color: var(--green);
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading small {
+    color: var(--green);
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.section-heading h2 {
+    color: var(--green);
+    font-size: 34px;
+    margin: 10px 0;
+    font-weight: 900;
+}
+
+.section-heading p {
+    color: #777;
+    font-size: 15px;
+    line-height: 2;
+}
+
+/* INTRO */
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.intro img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+/* INTRO TEXT */
+.intro h2 {
+    color: var(--green);
+    font-size: 30px;
+    margin-bottom: 18px;
+    font-weight: 900;
+}
+
+.intro p {
+    line-height: 2.2;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card,
+.activity-card {
+    background: white;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    transition: .3s;
+}
+
+.card:hover,
+.activity-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+.card img,
+.activity-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    background: #dcebe0;
+}
+
+.card-content,
+.activity-content {
+    padding: 24px;
+}
+
+.card-content h3,
+.activity-content h3 {
+    color: var(--green);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-content p,
+.activity-content p {
+    color: #777;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+/* STATS */
+.stats {
+    background: var(--green-dark);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    padding: 48px 8%;
+    gap: 20px;
+}
+
+.stat h2 {
+    font-size: 36px;
+    color: #a9dfb5;
+}
+
+.stat p {
+    font-size: 14px;
+}
+
+/* PAGE BANNER */
+.page-banner {
+    padding: 75px 8%;
+    color: white;
+    text-align: center;
+    background:
+        linear-gradient(rgba(13,49,36,.85), rgba(13,49,36,.85)),
+        url('https://commons.wikimedia.org/wiki/Special:FilePath/Wasit_Wetland_Centre.jpg')
+        center / cover no-repeat;
+}
+
+.page-banner h1 {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.page-banner p {
+    margin-top: 10px;
+    color: #e5e5e5;
+}
+
+/* ABOUT */
+.about-box {
+    background: white;
+    padding: 35px;
+    border-radius: 13px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    margin-bottom: 25px;
+}
+
+.about-box h2 {
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    line-height: 2.2;
+    color: #666;
+}
+
+.objectives {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.objective {
+    background: var(--green-light);
+    padding: 22px;
+    border-radius: 10px;
+    border-right: 4px solid var(--accent);
+}
+
+.objective h3 {
+    color: var(--green);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.objective p {
+    font-size: 14px;
+}
+
+/* ACTIVITIES */
+.activity-card img {
+    height: 190px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.step {
+    background: var(--green-light);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.step-number {
+    background: var(--green);
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 15px;
+    font-weight: 900;
+}
+
+.step h3 {
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.notice {
+    background: #edf6ef;
+    border-right: 4px solid var(--accent);
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 2;
+    color: #31583c;
+    margin-top: 25px;
+}
+
+/* JOIN US */
+.join-section {
+    background: #eaf5ec;
+}
+
+.join-container {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 45px;
+    box-shadow: 0 8px 30px rgba(16,59,41,.08);
+}
+
+.join-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+.join-icon {
+    display: block;
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.join-heading small {
+    color: var(--green);
+    font-weight: 800;
+}
+
+.join-heading h2 {
+    color: var(--green-dark);
+    font-size: 30px;
+    font-weight: 900;
+    margin: 12px 0;
+    line-height: 1.7;
+}
+
+.join-heading p {
+    color: #66736a;
+    line-height: 2.1;
+}
+
+.join-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 45px;
+}
+
+.join-benefit {
+    background: #f1f7f2;
+    border: 1px solid #dcebdd;
+    border-radius: 13px;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.join-benefit span {
+    font-size: 35px;
+}
+
+.join-benefit h3 {
+    color: var(--green);
+    font-size: 17px;
+    margin: 12px 0 7px;
+}
+
+.join-benefit p {
+    color: #68766c;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.join-how {
+    text-align: center;
+    border-top: 1px solid #e5eee6;
+    padding-top: 35px;
+}
+
+.join-how > h3 {
+    color: var(--green-dark);
+    font-size: 25px;
+}
+
+.join-how > p {
+    color: #777;
+    margin: 8px 0 25px;
+}
+
+.join-action {
+    background: #eaf5ec;
+    border-radius: 14px;
+    padding: 30px 15px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.join-action h3 {
+    color: var(--green-dark);
+    font-size: 23px;
+}
+
+.join-action p {
+    color: #647369;
+    margin: 8px 0 20px;
+}
+
+.join-button {
+    font-size: 15px;
+    padding: 14px 32px;
+}
+
+/* FOOTER */
+footer {
+    background: #102f23;
+    color: white;
+    padding: 55px 8% 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+footer h3 {
+    color: #a9dfb5;
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #d2ddd5;
+    font-size: 13px;
+    line-height: 2.2;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer a:hover {
+    color: #a9dfb5;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,.15);
+    text-align: center;
+    padding-top: 20px;
+    color: #b7c5bc;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    header {
+        padding: 10px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 85px;
+        right: 0;
+        left: 0;
+        background: var(--header-green);
+        padding: 22px;
+        flex-direction: column;
+        gap: 18px;
+        box-shadow: 0 8px 15px rgba(0,0,0,.08);
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero {
+        min-height: 540px;
+        padding: 55px 7%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .cards,
+    .objectives,
+    .steps,
+    .stats,
+    .footer-content,
+    .join-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .page-banner h1 {
+        font-size: 30px;
+    }
+
+    .brand-text h2 {
+        font-size: 15px;
+    }
+
+    .brand-text p {
+        font-size: 9px;
+    }
+
+    .brand img {
+        width: 52px;
+        height: 52px;
+        padding: 0;
+    }
+
+    .brand-text {
+        padding-right: 8px;
+    }
+
+    .join-container {
+        padding: 25px 17px;
+    }
+
+    .join-heading h2 {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="brand" onclick="showPage('home')">
+
+        <img
+            src="https://media.uaelogos.ae/161/conversions/sharjah-municipality-thumb.png"
+            alt="شعار بلدية مدينة الشارقة الرسمي"
+            onerror="this.src='https://shjmun.gov.ae/assets/images/shj-logo.png';"
+        >
+
+        <div class="brand-text">
+            <h2>حدائق الشارقة</h2>
+            <p>Sharjah Gardens Initiative</p>
+        </div>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navigation">
+        <a class="active" onclick="showPage('home', this)">الرئيسية</a>
+        <a onclick="showPage('about', this)">عن المبادرة</a>
+        <a onclick="showPage('activities', this)">الأنشطة والمشاركة</a>
+    </nav>
+</header>
+
+<!-- HOME PAGE -->
+<main id="home" class="page active">
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">🌿 مبادرة بيئية مجتمعية في إمارة الشارقة</div>
+
+            <h1>
+                معاً نصنع الشارقة<br>
+                <span>أكثر خضرة وجمالاً</span>
+            </h1>
+
+            <p>
+                لأن جمال الشارقة يبدأ من بيئتها، ندعو أفراد المجتمع
+                للمشاركة في نشر الوعي البيئي، والمحافظة على الحدائق
+                والمساحات الخضراء، وبناء مستقبل أكثر استدامة للأجيال القادمة.
+            </p>
+
+            <button class="main-btn" onclick="showPage('about')">
+                اكتشف المبادرة
+            </button>
+
+            <button class="outline-btn" onclick="showPage('activities')">
+                شارك معنا
+            </button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="intro">
+            <div>
+                <h2>الشارقة.. مدينة تجمع بين الطبيعة والحياة</h2>
+
+                <p>
+                    تتميز إمارة الشارقة بواجهاتها المائية وحدائقها
+                    ومساحاتها الخضراء الجميلة. ومن هنا تأتي فكرة
+                    مبادرة حدائق الشارقة لتشجيع المجتمع على الاهتمام
+                    بالطبيعة والمحافظة على البيئة.
+                </p>
+
+                <p>
+                    نؤمن أن التغيير يبدأ بخطوات بسيطة، مثل زراعة شجرة،
+                    أو المحافظة على نظافة الحديقة، أو المشاركة في نشر
+                    الثقافة البيئية.
+                </p>
+
+                <button class="main-btn" onclick="showPage('about')">
+                    اقرأ المزيد
+                </button>
+            </div>
+
+            <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Al_Noor_Island.jpg"
+                alt="جزيرة النور في الشارقة"
+            >
+        </div>
+    </section>
+
+    <section class="section" style="background:#f0f5ef;">
+        <div class="section-heading">
+            <small>ماذا نهدف إلى تحقيقه؟</small>
+            <h2>أهداف المبادرة</h2>
+            <p>نعمل معاً من أجل بيئة أفضل ومجتمع أكثر وعياً.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Highlights_at_Al_Montazah_Park,_Sharjah_UAE.jpg"
+                    alt="منتزهات المنتزه في الشارقة"
+                >
+                <div class="card-content">
+                    <h3>زيادة المساحات الخضراء</h3>
+                    <p>تشجيع زراعة الأشجار والنباتات والاهتمام بالحدائق والمساحات العامة.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Khorfakkan_beach.jpg"
+                    alt="شاطئ خورفكان في الشارقة"
+                >
+                <div class="card-content">
+                    <h3>حماية البيئة</h3>
+                    <p>تعزيز السلوكيات الإيجابية والمحافظة على الطبيعة والموارد البيئية.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Al-Qasba.jpg"
+                    alt="قناة القصباء في الشارقة"
+                >
+                <div class="card-content">
+                    <h3>مشاركة المجتمع</h3>
+                    <p>إشراك العائلات والطلاب والمتطوعين في الأنشطة البيئية والمجتمعية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat">
+            <h2>🌳</h2>
+            <p>بيئة خضراء ومستدامة</p>
+        </div>
+
+        <div class="stat">
+            <h2>🤝</h2>
+            <p>مجتمع متعاون ومتطوع</p>
+        </div>
+
+        <div class="stat">
+            <h2>♻️</h2>
+            <p>مستقبل أكثر استدامة</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading">
+            <small>اكتشف جمال الإمارة</small>
+            <h2>من معالم الشارقة</h2>
+            <p>أماكن تجمع بين الطبيعة والجمال والحياة المجتمعية.</p>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Mangroves_in_Kalba_Sharjah.jpg"
+                    alt="محمية أشجار القرم في كلباء"
+                >
+                <div class="card-content">
+                    <h3>محمية القرم في كلباء</h3>
+                    <p>وجهة طبيعية تضم أشجار القرم وتنوعاً غنياً من الحياة البرية.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Sharjah_Flag_Island_2.jpg"
+                    alt="جزيرة العلم في الشارقة"
+                >
+                <div class="card-content">
+                    <h3>جزيرة العلم</h3>
+                    <p>معلم بارز في الشارقة يتميز بسارية العلم والمساحات المحيطة به.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Archeological_site_Maliha,_Sharjah.jpg"
+                    alt="موقع مليحة الأثري في الشارقة"
+                >
+                <div class="card-content">
+                    <h3>موقع مليحة الأثري</h3>
+                    <p>وجهة تجمع بين الطبيعة والتاريخ والتراث في إمارة الشارقة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ABOUT PAGE -->
+<section id="about" class="page">
+
+    <div class="page-banner">
+        <h1>عن المبادرة</h1>
+        <p>تعرف على رؤيتنا ورسالتنا وأهدافنا البيئية.</p>
+    </div>
+
+    <section class="section">
+
+        <div class="about-box">
+            <h2>🌿 ما هي مبادرة حدائق الشارقة؟</h2>
+            <p>
+                حدائق الشارقة هي فكرة مبادرة مجتمعية بيئية تهدف إلى
+                تشجيع سكان إمارة الشارقة على الاهتمام بالحدائق العامة
+                والمساحات الخضراء. تسعى المبادرة إلى نشر الوعي بأهمية
+                المحافظة على البيئة من خلال أنشطة تطوعية وتوعوية
+                ومشاركة أفراد المجتمع.
+            </p>
+        </div>
+
+        <div class="about-box">
+            <h2>🎯 رؤيتنا</h2>
+            <p>
+                أن تكون الشارقة نموذجاً لمدينة مستدامة تتميز ببيئة نظيفة
+                ومساحات خضراء جميلة، ومجتمع يشارك بفاعلية في حماية الطبيعة.
+            </p>
+        </div>
+
+        <div class="about-box">
+            <h2>💚 رسالتنا</h2>
+            <p>
+                نشر ثقافة المسؤولية البيئية وتشجيع الأفراد والعائلات
+                والطلاب على المشاركة في الأنشطة التي تحافظ على جمال
+                الإمارة ومواردها الطبيعية.
+            </p>
+        </div>
+
+        <div class="about-box">
+            <h2>أهدافنا الرئيسية</h2>
+
+            <div class="objectives">
+                <div class="objective">
+                    <h3>🌳 التشجير</h3>
+                    <p>تشجيع زراعة الأشجار والنباتات المحلية.</p>
+                </div>
+
+                <div class="objective">
+                    <h3>♻️ إعادة التدوير</h3>
+                    <p>تعزيز ثقافة فرز النفايات وإعادة استخدامها.</p>
+                </div>
+
+                <div class="objective">
+                    <h3>🧹 النظافة</h3>
+                    <p>المحافظة على نظافة الحدائق والأماكن العامة.</p>
+                </div>
+
+                <div class="objective">
+                    <h3>🤝 التطوع</h3>
+                    <p>تشجيع أفراد المجتمع على المشاركة والتعاون.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-box">
+            <h2>👥 الفئات المستهدفة</h2>
+            <p>
+                تستهدف المبادرة سكان إمارة الشارقة، والطلاب، والعائلات،
+                والمتطوعين، والمؤسسات التعليمية والمجتمعية، وكل شخص
+                يرغب في المساهمة في حماية البيئة.
+            </p>
+        </div>
+
+        <div class="notice">
+            <strong>ملاحظة مهمة:</strong>
+            هذا الموقع نموذج لمبادرة مقترحة ضمن مشروع جامعي،
+            ولا يمثل إعلاناً عن مبادرة رسمية معتمدة من بلدية مدينة الشارقة.
+        </div>
+
+    </section>
+</section>
+
+<!-- ACTIVITIES PAGE -->
+<section id="activities" class="page">
+
+    <div class="page-banner">
+        <h1>الأنشطة والمشاركة</h1>
+        <p>خطوات بسيطة منك تصنع فرقاً كبيراً في بيئتنا.</p>
+    </div>
+
+    <section class="section">
+
+        <div class="section-heading">
+            <small>أنشطة مقترحة</small>
+            <h2>أنشطة بيئية ومجتمعية</h2>
+            <p>اختر النشاط الذي يناسبك وكن جزءاً من التغيير الإيجابي.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="activity-card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/RainRoomSharjah.jpg"
+                    alt="الغرفة الماطرة في الشارقة"
+                >
+                <div class="activity-content">
+                    <h3>🌳 حملات التشجير</h3>
+                    <p>المشاركة في زراعة الأشجار والنباتات المناسبة للبيئة المحلية وزيادة المساحات الخضراء.</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Sharjah_Aquarium.jpg"
+                    alt="أكواريوم الشارقة"
+                >
+                <div class="activity-content">
+                    <h3>🧹 تنظيف الأماكن العامة</h3>
+                    <p>تنظيم أنشطة تطوعية للمحافظة على نظافة الحدائق والممرات والأماكن العامة.</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Sharjah_Museum_of_Islamic_Civilization.jpg"
+                    alt="متحف الشارقة للحضارة الإسلامية"
+                >
+                <div class="activity-content">
+                    <h3>♻️ إعادة التدوير</h3>
+                    <p>نشر الوعي حول فرز النفايات وتقليل استخدام المواد البلاستيكية والمحافظة على الموارد.</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Wasit_Wetland_Centre_01.jpg"
+                    alt="مركز واسط للأراضي الرطبة في الشارقة"
+                >
+                <div class="activity-content">
+                    <h3>📢 التوعية البيئية</h3>
+                    <p>تقديم معلومات ونصائح توعوية للطلاب والعائلات حول أهمية حماية البيئة.</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Detail_Mleiha_01.jpg"
+                    alt="موقع مليحة في الشارقة"
+                >
+                <div class="activity-content">
+                    <h3>👨‍👩‍👧‍👦 فعاليات عائلية</h3>
+                    <p>تشجيع العائلات على قضاء وقت ممتع في الطبيعة والمشاركة في الأنشطة البيئية.</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/AL_NOOR_ISLAND_AND_SHARJAH_AL_MAJAZ.jpg"
+                    alt="جزيرة النور والمجاز في الشارقة"
+                >
+                <div class="activity-content">
+                    <h3>🌱 حماية الطبيعة</h3>
+                    <p>نشر السلوكيات الإيجابية التي تساعد على حماية النباتات والحياة الطبيعية.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JOIN US -->
+    <section class="section join-section" id="join-us">
+
+        <div class="join-container">
+
+            <div class="join-heading">
+                <span class="join-icon">🤝</span>
+                <small>كن جزءاً من التغيير</small>
+                <h2>شارك معنا في جعل الشارقة أكثر خضرة!</h2>
+                <p>
+                    مساهمتك مهما كانت بسيطة يمكن أن تصنع فرقاً.
+                    انضم إلى أفراد المجتمع وشارك في الأنشطة التي تساعد
+                    على المحافظة على الحدائق والبيئة في إمارة الشارقة.
+                </p>
+            </div>
+
+            <div class="join-benefits">
+
+                <div class="join-benefit">
+                    <span>🌳</span>
+                    <h3>ساهم في التشجير</h3>
+                    <p>ساعد في زيادة المساحات الخضراء وزراعة النباتات.</p>
+                </div>
+
+                <div class="join-benefit">
+                    <span>♻️</span>
+                    <h3>احمِ البيئة</h3>
+                    <p>شارك في نشر ثقافة إعادة التدوير والمحافظة على الموارد.</p>
+                </div>
+
+                <div class="join-benefit">
+                    <span>🤝</span>
+                    <h3>تعاون مع المجتمع</h3>
+                    <p>كن جزءاً من العمل التطوعي الإيجابي.</p>
+                </div>
+
+            </div>
+
+            <div class="join-how">
+                <h3>كيف تشارك معنا؟</h3>
+                <p>اتبع هذه الخطوات الثلاث البسيطة:</p>
+
+                <div class="steps">
+
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>اختر النشاط</h3>
+                        <p>تصفح الأنشطة المقترحة واختر النشاط الذي يناسب اهتمامك.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>استعد للمشاركة</h3>
+                        <p>تعرف على متطلبات النشاط وجهّز الأدوات اللازمة واتبع إرشادات السلامة.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>اصنع الفرق</h3>
+                        <p>شارك بإيجابية وساهم في المحافظة على جمال البيئة.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="join-action">
+                <h3>هل أنت مستعد للمشاركة؟</h3>
+                <p>ابدأ باختيار النشاط الذي ترغب في المساهمة فيه.</p>
+
+                <button class="main-btn join-button"
+                        onclick="document.getElementById('activity-list').scrollIntoView({behavior:'smooth'});">
+                    استكشف الأنشطة الآن ←
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" id="activity-list">
+        <div class="section-heading">
+            <small>ابدأ الآن</small>
+            <h2>اختر النشاط الذي يناسبك</h2>
+            <p>كل مشاركة إيجابية تساعد في بناء بيئة أجمل وأكثر استدامة.</p>
+        </div>
+
+        <div class="notice">
+            <strong>ملاحظة:</strong>
+            هذه الأنشطة أفكار مقترحة ضمن مشروع جامعي، وليست فعاليات رسمية
+            معلنة أو نموذج تسجيل معتمداً من بلدية مدينة الشارقة.
+        </div>
+    </section>
+
+    <section class="section" style="background:#f0f5ef;">
+        <div class="section-heading">
+            <small>معلومات إضافية</small>
+            <h2>روابط مفيدة</h2>
+            <p>يمكنك زيارة المواقع الرسمية للتعرف على الخدمات والمعلومات.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>بلدية مدينة الشارقة</h3>
+                    <p>الموقع الرسمي للبلدية والخدمات والمعلومات المتعلقة بالمدينة.</p>
+                    <br>
+                    <a class="main-btn" href="https://shjmun.gov.ae/" target="_blank">زيارة الموقع</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>هيئة الشارقة للاستثمار والتطوير (شروق)</h3>
+                    <p>تعرف على الوجهات والمرافق السياحية والترفيهية في الشارقة.</p>
+                    <br>
+                    <a class="main-btn" href="https://www.shurooq.gov.ae/" target="_blank">زيارة الموقع</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>زوروا الشارقة</h3>
+                    <p>اكتشف الأماكن والمعالم والوجهات الجميلة في إمارة الشارقة.</p>
+                    <br>
+                    <a class="main-btn" href="https://www.visitsharjah.com/" target="_blank">زيارة الموقع</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+
+        <div>
+            <h3>🌿 حدائق الشارقة</h3>
+            <p>
+                معاً نحو بيئة أفضل ومستقبل أكثر استدامة.
+                شارك في نشر الوعي البيئي والمحافظة على جمال إمارة الشارقة.
+            </p>
+        </div>
+
+        <div>
+            <h3>روابط الموقع</h3>
+            <p><a onclick="showPage('home')">الرئيسية</a></p>
+            <p><a onclick="showPage('about')">عن المبادرة</a></p>
+            <p><a onclick="showPage('activities')">الأنشطة والمشاركة</a></p>
+        </div>
+
+        <div>
+            <h3>روابط خارجية</h3>
+            <p><a href="https://shjmun.gov.ae/" target="_blank">بلدية مدينة الشارقة</a></p>
+            <p><a href="https://www.visitsharjah.com/" target="_blank">زوروا الشارقة</a></p>
+            <p><a href="https://www.shurooq.gov.ae/" target="_blank">شروق</a></p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 حدائق الشارقة | مشروع جامعي توعوي مقترح
+    </div>
+</footer>
+
+<script>
+function showPage(pageId, clickedLink) {
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    document.getElementById(pageId).classList.add('active');
+
+    document.querySelectorAll('nav a').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    if (clickedLink) {
+        clickedLink.classList.add('active');
+    } else {
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.getAttribute('onclick') &&
+                link.getAttribute('onclick').includes(pageId)) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    document.getElementById('navigation').classList.remove('show');
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function toggleMenu() {
+    document.getElementById('navigation').classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
